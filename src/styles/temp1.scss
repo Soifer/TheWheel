@@ -1,0 +1,67 @@
+
+
+    .pie {
+        position: relative;
+        margin: 1em auto;
+        padding: 0;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 40%;
+        list-style: none;
+        background: url('../styles/images/wheel_v01.png');
+        background-size:100%;
+    
+         &-slice {
+            overflow: hidden;
+            position: absolute;
+            top: 0; right: 0;
+            width: 50%; height: 50%;
+            transform-origin: 0% 100%;     
+
+            &:nth-child(1) {
+                transform:rotate(0deg)  skewY(-30deg);
+              }
+              &:nth-child(2) {
+                transform: rotate(60deg) skewY(-30deg);
+              }
+              &:nth-child(3) {
+                transform: rotate(120deg) skewY(-30deg);
+              }
+              &:nth-child(4) {
+                transform: rotate(180deg) skewY(-30deg);
+              }
+              &:nth-child(5) {
+                transform: rotate(240deg) skewY(-30deg);
+              }
+              &:nth-child(6) {
+                transform: rotate(300deg) skewY(-30deg);
+              }
+
+            &:nth-child(1) &-contents-1,
+            &:nth-child(2) &-contents-2,
+            &:nth-child(3) &-contents-3,
+            &:nth-child(4) &-contents-4,
+            &:nth-child(5) &-contents-5,
+            &:nth-child(6) &-contents-6 {
+              transform: skewY(30deg); /* unskew slice contents */
+            }
+          
+            &:hover &-contents-1,&:hover &-contents-2,
+            &:hover &-contents-3, &:hover &-contents-4,
+            &:hover &-contents-5, &:hover &-contents-6
+             { background: rgb(197, 130, 197); opacity: 0.5;}
+
+            &-contents-1, &-contents-2, &-contents-3,
+            &-contents-4, &-contents-5, &-contents-6 {
+                position: absolute;
+                left: -100%;
+                width: 200%;
+                height: 200%;
+                border-radius: 50%;
+              }    
+
+          }
+    
+      }
+
+
